@@ -9,8 +9,8 @@ app = Flask(__name__)
 app.config['DEBUG'] = True
 
 # Ruta a la carpeta donde esté el modelo guardado
-root = '/home/gabsrodcas/modelo_clase/' # .. -> (tengo que poner el del directorio del pythonanywhere)
-root_db = "/home/gabsrodcas/databases/"
+root = '/home/gabsrodcas/Application_API/modelo_clase/' # .. -> (tengo que poner el del directorio del pythonanywhere)
+root_db = "/home/gabsrodcas/Application_API/databases/"
 model = pickle.load(open(root + 'advertising.model', 'rb'))
 
 # POST {"TV":, "radio":, "newspaper":} -> It returns the sales prediction for input investments
