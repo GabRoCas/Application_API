@@ -34,7 +34,6 @@ def get_predict():
     newspaper = data.get("newspaper",0)
 
     # Model prediciton
-    X = [[tv,radio,newspaper]]
     pred = model.predict(np.array([[tv,radio,newspaper]]))[0]
 
     # Save prediction in PREDICTIONS table
@@ -50,9 +49,9 @@ def return_predicts():
     crs = conn.cursor()
     query = "SELECT * FROM PREDICTIONS"
     resultado = jsonify(crs.execute(query).fetchall())
-    conn.close()
 
-    return resultado
+    conn.close()
+    return resultado, 200
 
 @app.route('/', methods=['GET'])
 def home():
